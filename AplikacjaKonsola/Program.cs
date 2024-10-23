@@ -1,13 +1,13 @@
 ﻿namespace AplikacjaKonsola
 {
-    internal class Program
+    public class Program
     {
-        static List<AlbumData> albumDatas = new List<AlbumData>();
         static void Main(string[] args)
         {
             string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Data.txt");
-            LoadDataFromFile(filePath);
-            DisplayData(albumDatas);
+            var albumData = LoadDataFromFile(filePath);
+            DisplayData(albumData);
+           
         }
 
         /*
@@ -21,10 +21,9 @@
          * 
          */
 
-        private static void LoadDataFromFile(string filePath)
+        public static List<AlbumData> LoadDataFromFile(string filePath)
         {
-            if(File.Exists(filePath))
-            {
+                List<AlbumData> data = new List<AlbumData>();
                 List<string> fileLines = new List<string>();
                 var lines = File.ReadAllLines(filePath);
                 foreach(var line in lines)
@@ -42,9 +41,9 @@
                         Year = int.Parse(fileLines[i + 3]),
                         DownloadNumber = int.Parse(fileLines[i + 4])
                     };
-                    albumDatas.Add(albumData);
+                    data.Add(albumData);
                 }
-            }
+                return data;
         }
 
         private static void DisplayData(List<AlbumData> albumDatas)
