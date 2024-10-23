@@ -10,6 +10,17 @@
             DisplayData(albumDatas);
         }
 
+        /*
+            ***********************************************
+            nazwa funkcji: LoadDataFromFile
+            opis funkcji: Funkcja wczytuje dane z pliku tekstowego i zapisuje je w liście
+            parametry: parametr filePath to ścieżka do pliku tekstowego z którego wczytujemy dane
+            zwracany typ i opis: "brak"
+            autor: Paweł Marcisz
+            ***********************************************
+         * 
+         */
+
         private static void LoadDataFromFile(string filePath)
         {
             if(File.Exists(filePath))
