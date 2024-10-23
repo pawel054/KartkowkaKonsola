@@ -7,7 +7,6 @@
             string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Data.txt");
             var albumData = LoadDataFromFile(filePath);
             DisplayData(albumData);
-           
         }
 
         /*
@@ -15,7 +14,7 @@
             nazwa funkcji: LoadDataFromFile
             opis funkcji: Funkcja wczytuje dane z pliku tekstowego i zapisuje je w liście
             parametry: parametr filePath to ścieżka do pliku tekstowego z którego wczytujemy dane
-            zwracany typ i opis: "brak"
+            zwracany typ i opis: List<AlbumData> - lista z danymi z pliku
             autor: Paweł Marcisz
             ***********************************************
          * 
