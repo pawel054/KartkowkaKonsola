@@ -7,9 +7,10 @@
         {
             string filePath = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "Data.txt");
             LoadDataFromFile(filePath);
+            DisplayData(albumDatas);
         }
 
-        internal static void LoadDataFromFile(string filePath)
+        private static void LoadDataFromFile(string filePath)
         {
             if(File.Exists(filePath))
             {
@@ -32,6 +33,14 @@
                     };
                     albumDatas.Add(albumData);
                 }
+            }
+        }
+
+        private static void DisplayData(List<AlbumData> albumDatas)
+        {
+            foreach(AlbumData albumData in albumDatas)
+            {
+                Console.WriteLine($"{albumData.Artist}\n{albumData.Album}\n{albumData.SongsNumber}\n{albumData.Year}\n{albumData.DownloadNumber}\n");
             }
         }
     }
